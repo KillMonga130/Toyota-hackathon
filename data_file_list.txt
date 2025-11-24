@@ -1,0 +1,156 @@
+﻿0,00 MB | 2,16 KB | 2208 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\README.md
+0,01 MB | 6,00 KB | 6148 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\.DS_Store
+0,00 MB | 2,40 KB | 2462 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\03_Provisional Results_Race 1_Anonymized.CSV
+0,00 MB | 2,40 KB | 2455 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\03_Provisional Results_Race 2_Anonymized.CSV
+0,00 MB | 2,40 KB | 2455 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\03_Results GR Cup Race 2 Official_Anonymized.CSV
+0,00 MB | 1,57 KB | 1611 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\05_Provisional Results by Class_Race 1_Anonymized.CSV
+0,00 MB | 1,57 KB | 1608 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\05_Provisional Results by Class_Race 2_Anonymized.CSV
+0,00 MB | 1,57 KB | 1611 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\05_Results by Class GR Cup Race 1 Official_Anonymized.CSV
+0,14 MB | 139,31 KB | 142657 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\23_AnalysisEnduranceWithSections_Race 1_Anonymized.CSV
+0,14 MB | 144,57 KB | 148041 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\23_AnalysisEnduranceWithSections_Race 2_Anonymized.CSV
+0,00 MB | 2,67 KB | 2733 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\26_Weather_Race 1_Anonymized.CSV
+0,00 MB | 2,73 KB | 2794 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\26_Weather_Race 2_Anonymized.CSV
+0,00 MB | 3,46 KB | 3547 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\99_Best 10 Laps By Driver_Race 1_Anonymized.CSV
+0,00 MB | 3,46 KB | 3542 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\99_Best 10 Laps By Driver_Race 2_Anonymized.CSV
+0,06 MB | 64,92 KB | 66479 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\R1_barber_lap_end.csv
+0,06 MB | 64,94 KB | 66499 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\R1_barber_lap_start.csv
+0,06 MB | 64,92 KB | 66479 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\R1_barber_lap_time.csv
+1 485,13 MB | 1 520 776,96 KB | 1557275602 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\R1_barber_telemetry_data.csv
+0,07 MB | 67,66 KB | 69281 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\R2_barber_lap_end.csv
+0,07 MB | 67,68 KB | 69301 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\R2_barber_lap_start.csv
+0,07 MB | 67,66 KB | 69281 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\R2_barber_lap_time.csv
+1 510,02 MB | 1 546 263,42 KB | 1583373740 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\barber-motorsports-park\barber\R2_barber_telemetry_data.csv
+0,29 MB | 295,45 KB | 302543 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA_Circuit_Map.pdf
+0,00 MB | 3,31 KB | 3385 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 1\00_Results GR Cup Race 1 Official_Anonymized.CSV
+0,00 MB | 3,31 KB | 3385 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 1\03_Provisional Results_Race 1_Anonymized.CSV
+0,00 MB | 2,15 KB | 2199 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 1\05_Provisional Results by Class_Race 1_Anonymized.CSV
+0,12 MB | 118,66 KB | 121505 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 1\23_AnalysisEnduranceWithSections_Race 1_Anonymized.CSV
+0,00 MB | 2,95 KB | 3017 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 1\26_Weather_Race 1_Anonymized.CSV
+0,00 MB | 4,50 KB | 4609 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 1\99_Best 10 Laps By Driver_Race 1_Anonymized.CSV
+0,08 MB | 86,11 KB | 88173 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 1\COTA_lap_end_time_R1.csv
+0,08 MB | 86,02 KB | 88086 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 1\COTA_lap_start_time_R1.csv
+0,07 MB | 73,57 KB | 75337 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 1\COTA_lap_time_R1.csv
+2 209,78 MB | 2 262 818,19 KB | 2317125823 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 1\R1_cota_telemetry_data.csv
+0,00 MB | 3,31 KB | 3390 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 2\03_Provisional Results_ Race 2_Anonymized.CSV
+0,00 MB | 2,16 KB | 2208 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 2\05_Provisional Results by Class_ Race 2_Anonymized.CSV
+0,12 MB | 123,54 KB | 126505 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 2\23_AnalysisEnduranceWithSections_ Race 2_Anonymized.CSV
+0,00 MB | 3,01 KB | 3078 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 2\26_Weather_ Race 2_Anonymized.CSV
+0,00 MB | 4,68 KB | 4789 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 2\99_Best 10 Laps By Driver_ Race 2_Anonymized.CSV
+0,08 MB | 86,92 KB | 89011 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 2\COTA_lap_end_time_R2.csv
+0,08 MB | 86,85 KB | 88932 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 2\COTA_lap_start_time_R2.csv
+0,07 MB | 74,36 KB | 76143 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 2\COTA_lap_time_R2.csv
+2 143,24 MB | 2 194 678,24 KB | 2247350515 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\circuit-of-the-americas\COTA\Race 2\R2_cota_telemetry_data.csv
+0,00 MB | 1,67 KB | 1711 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\docs\additional data sources.txt
+0,15 MB | 150,38 KB | 153993 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\Indy_Circuit_Map.pdf
+0,01 MB | 6,00 KB | 6148 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\.DS_Store
+0,00 MB | 4,75 KB | 4860 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\03_GR Cup Race 1 Official Results.CSV
+0,00 MB | 4,77 KB | 4883 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\03_GR Cup Race 2 Official Results.CSV
+0,00 MB | 4,75 KB | 4860 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\03_Provisional Results_Race 1.CSV
+0,00 MB | 4,77 KB | 4883 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\03_Provisional Results_Race 2.CSV
+0,00 MB | 3,28 KB | 3356 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\05_GR Cup Race 1 Official Results by Class.CSV
+0,00 MB | 3,30 KB | 3379 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\05_GR Cup Race 2 Official Results by Class.CSV
+0,00 MB | 3,28 KB | 3356 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\05_Provisional Results by Class_Race 1.CSV
+0,00 MB | 3,30 KB | 3379 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\05_Provisionals Results by Class_Race 2.CSV
+0,19 MB | 192,21 KB | 196818 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\23_AnalysisEnduranceWithSections_Race 1.CSV
+0,17 MB | 178,10 KB | 182376 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\23_AnalysisEnduranceWithSections_Race 2.CSV
+0,00 MB | 3,11 KB | 3181 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\26_Weather_Race 1.CSV
+0,00 MB | 2,97 KB | 3038 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\26_Weather_Race 2.CSV
+0,01 MB | 5,54 KB | 5669 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\99_Best 10 Laps By Driver_Race 1.CSV
+0,01 MB | 5,61 KB | 5745 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\99_Best 10 Laps By Driver_Race 2.CSV
+0,02 MB | 23,79 KB | 24361 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\GR Drivers Championship-1.csv
+0,08 MB | 86,96 KB | 89044 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\R1_indianapolis_motor_speedway_lap_end.csv
+0,08 MB | 86,32 KB | 88392 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\R1_indianapolis_motor_speedway_lap_start.csv
+0,08 MB | 86,96 KB | 89044 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\R1_indianapolis_motor_speedway_lap_time.csv
+2 847,83 MB | 2 916 176,71 KB | 2986164955 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\R1_indianapolis_motor_speedway_telemetry.csv
+0,08 MB | 78,24 KB | 80114 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\R2_indianapolis_motor_speedway_lap_end.csv
+0,08 MB | 78,07 KB | 79948 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\R2_indianapolis_motor_speedway_lap_start.csv
+0,08 MB | 77,88 KB | 79751 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\R2_indianapolis_motor_speedway_lap_time.csv
+3 064,44 MB | 3 137 986,81 KB | 3213298497 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\indianapolis\indianapolis\R2_indianapolis_motor_speedway_telemetry.csv
+0,21 MB | 211,29 KB | 216366 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\Road_America_Map.pdf
+0,00 MB | 3,05 KB | 3121 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 1\03_Provisional Results_Race 1_Anonymized.CSV
+0,00 MB | 3,08 KB | 3150 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 1\03_Results GR Cup Race 1 Official1_Anonymized.CSV
+0,00 MB | 1,99 KB | 2039 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 1\05_Provisional Results by Class_Race 1_Anonymized.CSV
+0,00 MB | 1,99 KB | 2039 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 1\05_Results by Class GR Cup Race 1 Official_Anonymized.CSV
+0,10 MB | 100,56 KB | 102976 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 1\23_AnalysisEnduranceWithSections_Race 1_Anonymized.CSV
+0,00 MB | 2,86 KB | 2926 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 1\26_Weather_Race 1_Anonymized.CSV
+0,00 MB | 4,25 KB | 4357 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 1\99_Best 10 Laps By Driver_Race 1_Anonymized.CSV
+1 113,85 MB | 1 140 586,02 KB | 1167960088 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 1\R1_road_america_telemetry_data.csv
+0,03 MB | 27,37 KB | 28031 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 1\road_america_lap_end_R1.csv
+0,03 MB | 27,27 KB | 27927 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 1\road_america_lap_start_R1.csv
+0,02 MB | 23,47 KB | 24035 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 1\road_america_lap_time_R1.csv
+0,00 MB | 3,04 KB | 3117 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 2\03_Provisional Results_Race 2_Anonymized.CSV
+0,00 MB | 3,05 KB | 3120 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 2\03_Results GR Cup Race 2 Official_Anonymized.CSV
+0,00 MB | 1,95 KB | 1996 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 2\05_Provisional Results by Class_Race 2_Anonymized.CSV
+0,00 MB | 1,98 KB | 2031 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 2\05_Results by Class GR Cup Race 2 Official_Anonymized.CSV
+0,10 MB | 105,33 KB | 107858 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 2\23_AnalysisEnduranceWithSections_Race 2_Anonymized.CSV
+0,00 MB | 2,98 KB | 3052 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 2\26_Weather_Race 2_Anonymized.CSV
+0,00 MB | 4,03 KB | 4123 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 2\99_Best 10 Laps By Driver_Race 2_Anonymized.CSV
+1 402,22 MB | 1 435 877,93 KB | 1470339000 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 2\R2_road_america_telemetry_data.csv
+0,05 MB | 52,65 KB | 53912 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 2\road_america_lap_end_R2.csv
+0,05 MB | 52,67 KB | 53936 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 2\road_america_lap_start_R2.csv
+0,04 MB | 45,09 KB | 46169 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\road-america\road-america\Road America\Race 2\road_america_lap_time_R2.csv
+0,17 MB | 177,17 KB | 181417 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\Sebring_Track_Sector_Map.pdf
+0,01 MB | 6,00 KB | 6148 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\.DS_Store
+0,01 MB | 6,00 KB | 6148 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 1\.DS_Store
+0,00 MB | 2,42 KB | 2476 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 1\00_Results GR Race 1 Official_Anonymized.CSV
+0,00 MB | 2,42 KB | 2476 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 1\03_Provisional Results_Race 1_Anonymized.CSV
+0,00 MB | 1,57 KB | 1611 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 1\05_Provisional Results by Class_Race 1_Anonymized.CSV
+0,09 MB | 96,11 KB | 98415 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 1\23_AnalysisEnduranceWithSections_Race 1_Anonymized.CSV
+0,00 MB | 3,02 KB | 3093 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 1\26_Weather_Race 1_Anonymized.CSV
+0,00 MB | 3,34 KB | 3422 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 1\99_Best 10 Laps By Driver_Race 1_Anonymized.CSV
+0,06 MB | 62,93 KB | 64443 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 1\sebring_lap_end_time_R1.csv
+0,06 MB | 62,97 KB | 64485 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 1\sebring_lap_start_time_R1.csv
+0,05 MB | 53,66 KB | 54948 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 1\sebring_lap_time_R1.csv
+1 774,68 MB | 1 817 271,73 KB | 1860886253 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 1\sebring_telemetry_R1.csv
+0,00 MB | 2,38 KB | 2438 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 2\00_Results GR Race 2 Official_Anonymized.CSV
+0,00 MB | 2,38 KB | 2435 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 2\03_Provisional Results_Race 2_Anonymized.CSV
+0,00 MB | 1,53 KB | 1570 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 2\05_Provisional Results by Class_Race 2_Anonymized.CSV
+0,08 MB | 79,67 KB | 81585 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 2\23_AnalysisEnduranceWithSections_Race 2_Anonymized.CSV
+0,00 MB | 2,57 KB | 2627 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 2\26_Weather_Race 2_Anonymized.CSV
+0,00 MB | 3,28 KB | 3356 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 2\99_Best 10 Laps By Driver_Race 2_Anonymized.CSV
+0,06 MB | 58,33 KB | 59730 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 2\sebring_lap_end_time_R2.csv
+0,06 MB | 58,29 KB | 59693 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 2\sebring_lap_start_time_R2.csv
+0,05 MB | 49,68 KB | 50871 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 2\sebring_lap_time_R2.csv
+815,60 MB | 835 170,76 KB | 855214854 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sebring\sebring\Sebring\Race 2\sebring_telemetry_R2.csv
+0,44 MB | 447,80 KB | 458549 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma_Map.pdf
+0,00 MB | 3,32 KB | 3403 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma\Race 1\03_Results_Anonymized.CSV
+0,00 MB | 2,19 KB | 2240 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma\Race 1\05_Results by Class_Race 1_Anonymized.CSV
+0,16 MB | 160,61 KB | 164467 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma\Race 1\23_AnalysisEnduranceWithSections_Race 1_Anonymized.CSV
+0,00 MB | 3,02 KB | 3096 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma\Race 1\26_Weather_Race 1_Anonymized.CSV
+0,00 MB | 4,71 KB | 4826 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma\Race 1\99_Best 10 Laps By Driver_Race 1_Anonymized.CSV
+0,14 MB | 144,10 KB | 147559 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma\Race 1\sonoma_lap_end_time_R1.csv
+0,14 MB | 144,07 KB | 147523 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma\Race 1\sonoma_lap_start_time_R1.csv
+0,12 MB | 123,51 KB | 126470 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma\Race 1\sonoma_lap_time_R1.csv
+3 475,25 MB | 3 558 652,33 KB | 3644059984 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma\Race 1\sonoma_telemetry_R1.csv
+0,00 MB | 4,14 KB | 4240 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma\Race 2\03_Provisional_Results_Race 2_Anonymized.CSV
+0,00 MB | 3,33 KB | 3409 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma\Race 2\03_Results_Anonymized.CSV
+0,00 MB | 2,19 KB | 2243 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma\Race 2\05_Provisional_Results by Class_Race 2_Anonymized.CSV
+0,12 MB | 122,51 KB | 125452 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma\Race 2\23_AnalysisEnduranceWithSections_Race 2_Anonymized.CSV
+0,00 MB | 4,71 KB | 4818 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma\Race 2\99_Best 10 Laps By Driver_Race 2_Anonymized.CSV
+0,09 MB | 94,43 KB | 96695 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma\Race 2\sonoma_lap_end_time_R2.csv
+0,09 MB | 94,45 KB | 96721 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma\Race 2\sonoma_lap_start_time_R2.csv
+0,08 MB | 80,83 KB | 82771 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma\Race 2\sonoma_lap_time_R2.csv
+1 725,96 MB | 1 767 381,81 KB | 1809798972 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\sonoma\Sonoma\Race 2\sonoma_telemetry_R2.csv
+0,17 MB | 169,71 KB | 173786 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\VIR_map.pdf
+0,00 MB | 2,59 KB | 2655 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 1\03_Provisional Results_Race 1_Anonymized.CSV
+0,00 MB | 2,62 KB | 2680 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 1\03_Results GR Cup Race 1 Official_Anonymized.CSV
+0,00 MB | 1,67 KB | 1712 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 1\05_Provisional Results by Class_Race 1_Anonymized.CSV
+0,00 MB | 1,67 KB | 1712 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 1\05_Results by Class GR Cup Race 1 Official_Anonymized.CSV
+0,10 MB | 99,26 KB | 101643 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 1\23_AnalysisEnduranceWithSections_Race 1_Anonymized.CSV
+0,00 MB | 2,96 KB | 3032 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 1\26_Weather_Race 1_Anonymized.CSV
+0,00 MB | 3,45 KB | 3532 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 1\99_Best 10 Laps By Driver_Race 1_Anonymized.CSV
+1 419,11 MB | 1 453 173,71 KB | 1488049877 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 1\R1_vir_telemetry_data.csv
+0,06 MB | 59,82 KB | 61257 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 1\vir_lap_end_R1.csv
+0,06 MB | 59,78 KB | 61213 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 1\vir_lap_start_R1.csv
+0,05 MB | 51,11 KB | 52333 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 1\vir_lap_time_R1.csv
+0,00 MB | 2,55 KB | 2616 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 2\03_Provisional Results_Race 2_Anonymized.CSV
+0,00 MB | 2,56 KB | 2617 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 2\03_Results GR Cup Race 2 Official_Anonymized.CSV
+0,00 MB | 1,62 KB | 1659 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 2\05_Provisional Results by Class_Race 2_Anonymized.CSV
+0,00 MB | 1,65 KB | 1691 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 2\05_Results by Class GR Cup Race 2 Official_Anonymized.CSV
+0,10 MB | 102,55 KB | 105016 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 2\23_AnalysisEnduranceWithSections_Race 2_Anonymized.CSV
+0,00 MB | 2,88 KB | 2950 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 2\26_Weather_Race 2_Anonymized.CSV
+0,00 MB | 3,28 KB | 3360 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 2\99_Best 10 Laps By Driver_Race 2_Anonymized.CSV
+1 463,89 MB | 1 499 024,61 KB | 1535001198 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 2\R2_vir_telemetry_data.csv
+0,06 MB | 58,84 KB | 60248 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 2\vir_lap_end_R2.csv
+0,06 MB | 58,79 KB | 60196 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 2\vir_lap_start_R2.csv
+0,05 MB | 51,11 KB | 52333 bytes | C:\Users\mubva\OneDrive\Desktop\Toyota hackathon\data\virginia-international-raceway\virginia-international-raceway\VIR\Race 2\vir_lap_time_R2.csv
