@@ -67,9 +67,7 @@ function TrackLine() {
   }
 
   return (
-    <line geometry={geometry}>
-      <lineBasicMaterial vertexColors={true} />
-    </line>
+    <primitive object={new THREE.Line(geometry, new THREE.LineBasicMaterial({ vertexColors: true }))} />
   );
 }
 

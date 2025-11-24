@@ -42,7 +42,7 @@ async function getFilePreview(
           rows: (results.data || []).filter(Boolean),
         });
       },
-      error: (error) => reject(error),
+      error: (error: Error) => reject(error),
     });
   });
 }
@@ -508,13 +508,13 @@ export function useTelemetryLoader() {
                 setIsLoading(false);
               }
             },
-            error: (error) => {
+            error: (error: Error) => {
               setError(`CSV parsing error: ${error.message}`);
               setIsLoading(false);
             },
           });
         },
-        error: (previewError) => {
+        error: (previewError: Error) => {
           setError(`CSV preview error: ${previewError.message}`);
           setIsLoading(false);
         },
