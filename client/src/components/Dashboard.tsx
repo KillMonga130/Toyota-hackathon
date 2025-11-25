@@ -19,6 +19,8 @@ export default function Dashboard() {
     isPlaying,
     setIsPlaying,
     setCurrentFrameIndex,
+    visualizationMode,
+    setVisualizationMode,
   } = useRaceStore();
   
   const { loadTelemetry, isLoading, error } = useTelemetryLoader();
@@ -201,6 +203,30 @@ export default function Dashboard() {
 
           {/* Controls */}
           <div className="flex items-center gap-6">
+            {/* Visualization Mode Toggle */}
+            <div className="flex items-center gap-2 bg-black/60 rounded-lg p-1 border border-gray-700">
+              <button
+                onClick={() => setVisualizationMode('speed')}
+                className={`px-4 py-2 rounded text-xs font-semibold uppercase tracking-wider transition-colors ${
+                  visualizationMode === 'speed'
+                    ? 'bg-primary text-white'
+                    : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                Speed
+              </button>
+              <button
+                onClick={() => setVisualizationMode('input')}
+                className={`px-4 py-2 rounded text-xs font-semibold uppercase tracking-wider transition-colors ${
+                  visualizationMode === 'input'
+                    ? 'bg-primary text-white'
+                    : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                Input
+              </button>
+            </div>
+
             {/* Play/Pause Button */}
             <button
               onClick={() => setIsPlaying(!isPlaying)}

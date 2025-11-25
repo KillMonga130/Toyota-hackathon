@@ -20,6 +20,10 @@ interface RaceStore {
   // Telemetry data
   telemetryData: TelemetryDataPoint[];
   setTelemetryData: (data: TelemetryDataPoint[]) => void;
+  
+  // Visualization mode
+  visualizationMode: 'speed' | 'input';
+  setVisualizationMode: (mode: 'speed' | 'input') => void;
 }
 
 export const useRaceStore = create<RaceStore>((set) => ({
@@ -41,5 +45,9 @@ export const useRaceStore = create<RaceStore>((set) => ({
   // Telemetry data
   telemetryData: [],
   setTelemetryData: (data) => set({ telemetryData: data }),
+  
+  // Visualization mode
+  visualizationMode: 'speed' as 'speed' | 'input',
+  setVisualizationMode: (mode) => set({ visualizationMode: mode }),
 }));
 

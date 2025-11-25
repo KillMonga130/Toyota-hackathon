@@ -27,10 +27,10 @@ function interpolateColor(
 }
 
 /**
- * Track visualization component that displays the racing line with speed-based coloring
+ * Track visualization component that displays the racing line with speed-based or input-based coloring
  */
 function TrackLine() {
-  const { telemetryData } = useRaceStore();
+  const { telemetryData, visualizationMode } = useRaceStore();
 
   const geometry = useMemo(() => {
     if (!telemetryData || telemetryData.length === 0) {
@@ -45,12 +45,39 @@ function TrackLine() {
       // Add position [x, 0, z]
       positions.push(point.x, 0, point.z);
 
-      // Generate vertex color based on speed
-      // Red (1, 0, 0) = 0 km/h, Green (0, 1, 0) = 200 km/h
-      const speed = point.speed || 0;
-      // Normalize speed to 0-1 range (0 km/h = 0, 200 km/h = 1)
-      const normalizedSpeed = Math.min(speed / 200, 1);
-      const [r, g, b] = interpolateColor(normalizedSpeed);
+      let r: number, g: number, b: number;
+
+      if (visualizationMode === 'input') {
+        // Input Mode: Red = Braking, Green = Throttle, Gray = Coasting
+        const brakePressure = (point.brakeFront || 0) + (point.brakeRear || 0);
+        const throttle = point.throttle || 0;
+        
+        if (brakePressure > 0.1) {
+          // Braking: Red intensity based on brake pressure (0-100 bar)
+          const brakeIntensity = Math.min(brakePressure / 100, 1);
+          r = brakeIntensity;
+          g = 0;
+          b = 0;
+        } else if (throttle > 5) {
+          // Throttle: Green intensity based on throttle position (0-100%)
+          const throttleIntensity = Math.min(throttle / 100, 1);
+          r = 0;
+          g = throttleIntensity;
+          b = 0;
+        } else {
+          // Coasting: Gray (no input)
+          r = 0.3;
+          g = 0.3;
+          b = 0.3;
+        }
+      } else {
+        // Speed Mode: Red (1, 0, 0) = 0 km/h, Green (0, 1, 0) = 200 km/h
+        const speed = point.speed || 0;
+        // Normalize speed to 0-1 range (0 km/h = 0, 200 km/h = 1)
+        const normalizedSpeed = Math.min(speed / 200, 1);
+        [r, g, b] = interpolateColor(normalizedSpeed);
+      }
+      
       colors.push(r, g, b);
     });
 
@@ -60,7 +87,7 @@ function TrackLine() {
     geom.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
 
     return geom;
-  }, [telemetryData]);
+  }, [telemetryData, visualizationMode]);
 
   if (!geometry) {
     return null;
