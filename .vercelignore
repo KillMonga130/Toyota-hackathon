@@ -1,0 +1,7 @@
+data/
+*.csv
+data_file_list.txt
+node_modules/
+.vite/
+.cache/
+
