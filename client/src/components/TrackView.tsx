@@ -1,8 +1,10 @@
 import { useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Sky, Environment } from '@react-three/drei';
+import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing';
 import { useRaceStore } from '../store/raceStore';
-import GhostCar from './GhostCar';
+import EnhancedGhostCar from './EnhancedGhostCar';
+import CameraController, { CameraMode } from './CameraController';
 import Dashboard from './Dashboard';
 import * as THREE from 'three';
 
@@ -103,7 +105,7 @@ function TrackLine() {
  * Displays the racing track in 3D with speed-based coloring
  */
 export default function TrackView() {
-  const { telemetryData } = useRaceStore();
+  const { telemetryData, cameraMode } = useRaceStore();
 
   if (!telemetryData || telemetryData.length === 0) {
     return (
@@ -119,28 +121,64 @@ export default function TrackView() {
     <div className="w-full h-full bg-background relative">
       <Canvas
         camera={{ position: [0, 500, 0], fov: 60 }}
-        gl={{ antialias: true }}
+        gl={{ antialias: true, toneMapping: THREE.ACESFilmicToneMapping }}
+        shadows
       >
-        {/* Lighting */}
-        <ambientLight intensity={0.6} />
-        <directionalLight position={[10, 10, 5]} intensity={1} />
+        {/* Environment & Lighting */}
+        <Sky
+          distance={450000}
+          sunPosition={[0, 1, 0]}
+          inclination={0}
+          azimuth={0.25}
+        />
+        <Environment preset="sunset" />
+        <ambientLight intensity={0.4} />
+        <directionalLight
+          position={[10, 10, 5]}
+          intensity={1.2}
+          castShadow
+          shadow-mapSize-width={2048}
+          shadow-mapSize-height={2048}
+        />
+        <pointLight position={[0, 20, 0]} intensity={0.5} />
+
+        {/* Track Surface */}
+        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.1, 0]} receiveShadow>
+          <planeGeometry args={[5000, 5000]} />
+          <meshStandardMaterial
+            color="#2a2a2a"
+            roughness={0.8}
+            metalness={0.1}
+          />
+        </mesh>
 
         {/* Grid Helper - positioned at y=-1 so track floats above it */}
-        <gridHelper args={[2000, 100]} position={[0, -1, 0]} />
+        <gridHelper args={[2000, 100]} position={[0, -0.05, 0]} />
 
-        {/* Orbit Controls with damping for smooth feel */}
-        <OrbitControls
-          enableDamping={true}
-          dampingFactor={0.05}
-          minDistance={10}
-          maxDistance={2000}
-        />
+        {/* Orbit Controls (only active in orbit mode) */}
+        {cameraMode === 'orbit' && (
+          <OrbitControls
+            enableDamping={true}
+            dampingFactor={0.05}
+            minDistance={10}
+            maxDistance={2000}
+          />
+        )}
+
+        {/* Camera Controller */}
+        <CameraController mode={cameraMode as CameraMode} />
 
         {/* Track Line with speed-based coloring */}
         <TrackLine />
         
-        {/* Ghost Car that animates along the track */}
-        <GhostCar />
+        {/* Enhanced Ghost Car */}
+        <EnhancedGhostCar />
+
+        {/* Post-Processing Effects */}
+        <EffectComposer>
+          <Bloom intensity={0.5} luminanceThreshold={0.9} />
+          <Vignette eskil={false} offset={0.1} darkness={0.5} />
+        </EffectComposer>
       </Canvas>
       
       {/* Telemetry Dashboard Overlay */}

@@ -7,6 +7,8 @@ import * as THREE from 'three';
  * GhostCar component that animates along the track based on telemetry data
  * Uses currentFrameIndex from the store to determine position
  */
+let frameAccumulator = 0;
+
 export default function GhostCar() {
   const groupRef = useRef<THREE.Group>(null);
   const {
@@ -14,6 +16,7 @@ export default function GhostCar() {
     currentFrameIndex,
     isPlaying,
     setCurrentFrameIndex,
+    playbackSpeed,
   } = useRaceStore();
 
   useFrame(() => {
@@ -36,10 +39,17 @@ export default function GhostCar() {
       groupRef.current.lookAt(lookAtPoint);
     }
 
-    // If playing, increment frame index
-    // For hackathon, updating every frame is fine
-    if (isPlaying && currentFrameIndex < telemetryData.length - 1) {
-      setCurrentFrameIndex(currentFrameIndex + 1);
+    // If playing, increment frame index based on playback speed
+    if (isPlaying) {
+      frameAccumulator += playbackSpeed;
+      if (frameAccumulator >= 1) {
+        const framesToSkip = Math.floor(frameAccumulator);
+        frameAccumulator -= framesToSkip;
+        const newIndex = Math.min(currentFrameIndex + framesToSkip, telemetryData.length - 1);
+        setCurrentFrameIndex(newIndex);
+      }
+    } else {
+      frameAccumulator = 0;
     }
   });
 

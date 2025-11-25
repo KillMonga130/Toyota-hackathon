@@ -7,6 +7,7 @@ import {
   type ReportCardSummary,
 } from '../hooks/useRaceCoach';
 import { generateDemoData } from '../utils/demoData';
+import { useSectorTiming } from '../hooks/useSectorTiming';
 
 /**
  * Telemetry Dashboard - Racing telemetry overlay
@@ -23,6 +24,12 @@ export default function Dashboard() {
     visualizationMode,
     setVisualizationMode,
     setTelemetryData,
+    cameraMode,
+    setCameraMode,
+    playbackSpeed,
+    setPlaybackSpeed,
+    sectorTimes,
+    bestLapTime,
   } = useRaceStore();
   
   const { loadTelemetry, isLoading, error } = useTelemetryLoader();
@@ -38,6 +45,9 @@ export default function Dashboard() {
   } = useRaceCoach();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isDragging, setIsDragging] = useState(false);
+  
+  // Calculate sector times
+  useSectorTiming();
 
   // Handle file selection
   const handleFileSelect = (file: File) => {
@@ -213,6 +223,30 @@ export default function Dashboard() {
                 {currentFrameIndex + 1} / {totalFrames}
               </div>
             </div>
+
+            {/* Sector Times */}
+            {sectorTimes.length > 0 && (
+              <div className="flex flex-col">
+                <div className="text-xs text-gray-400 uppercase tracking-wider mb-1">
+                  Sectors
+                </div>
+                <div className="text-xs text-green-400 tabular-nums">
+                  {sectorTimes.map((time, i) => `${time.toFixed(2)}s`).join(' / ')}
+                </div>
+              </div>
+            )}
+
+            {/* Best Lap Time */}
+            {bestLapTime !== null && (
+              <div className="flex flex-col">
+                <div className="text-xs text-gray-400 uppercase tracking-wider mb-1">
+                  Best Lap
+                </div>
+                <div className="text-sm text-yellow-400 tabular-nums font-bold">
+                  {bestLapTime.toFixed(2)}s
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Controls */}
@@ -238,6 +272,37 @@ export default function Dashboard() {
                 }`}
               >
                 Input
+              </button>
+            </div>
+
+            {/* Camera Mode Selector */}
+            <div className="flex items-center gap-2 bg-black/60 rounded-lg p-1 border border-gray-700">
+              <select
+                value={cameraMode}
+                onChange={(e) => setCameraMode(e.target.value as any)}
+                className="bg-transparent text-white text-xs font-semibold uppercase tracking-wider px-3 py-2 border-0 outline-none cursor-pointer"
+              >
+                <option value="orbit" className="bg-black">Orbit</option>
+                <option value="chase" className="bg-black">Chase</option>
+                <option value="cockpit" className="bg-black">Cockpit</option>
+                <option value="tv" className="bg-black">TV</option>
+                <option value="follow" className="bg-black">Follow</option>
+              </select>
+            </div>
+
+            {/* Playback Speed */}
+            <div className="flex items-center gap-2 bg-black/60 rounded-lg p-1 border border-gray-700">
+              <button
+                onClick={() => {
+                  const speeds = [0.25, 0.5, 1, 2, 4];
+                  const currentIndex = speeds.indexOf(playbackSpeed);
+                  const nextIndex = (currentIndex + 1) % speeds.length;
+                  setPlaybackSpeed(speeds[nextIndex]);
+                }}
+                className="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white hover:bg-gray-700 rounded transition-colors"
+                title="Playback Speed"
+              >
+                {playbackSpeed}x
               </button>
             </div>
 
