@@ -50,16 +50,22 @@ function ProceduralRoad() {
       return null;
     }
 
-    // Create points array from telemetry data
+    // Use EXACT same points as TrackLine - follow the telemetry path precisely
     const points: THREE.Vector3[] = telemetryData.map((point) => 
       new THREE.Vector3(point.x, 0.1, point.z)
     );
 
     if (points.length < 2) return null;
 
-    // Create Catmull-Rom curve for smooth path
-    const curve = new THREE.CatmullRomCurve3(points, true); // closed loop
-    const curvePoints = curve.getPoints(points.length * 2); // More points for smoother curve
+    // Create Catmull-Rom curve that follows the exact telemetry path
+    // Use closed loop if track appears to loop, otherwise open curve
+    const isClosed = points.length > 10 && 
+      points[0].distanceTo(points[points.length - 1]) < 100; // Within 100m = closed loop
+    
+    const curve = new THREE.CatmullRomCurve3(points, isClosed);
+    
+    // Get more points along the curve for smoother road surface
+    const curvePoints = curve.getPoints(points.length * 3);
 
     // Create road cross-section shape (10 meters wide, flat)
     const roadWidth = 10;
@@ -188,12 +194,12 @@ function TrackLine() {
       return null;
     }
 
-    // Map telemetry data to 3D points [x, 0, z]
+    // Map telemetry data to 3D points - EXACT same path as road
     const positions: number[] = [];
     const colors: number[] = [];
 
     telemetryData.forEach((point) => {
-      // Add position [x, 0, z]
+      // Add position [x, y, z] - elevated slightly above road surface
       positions.push(point.x, 0.12, point.z);
 
       let r: number, g: number, b: number;
