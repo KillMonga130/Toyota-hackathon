@@ -5,6 +5,7 @@ import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing';
 import { useRaceStore } from '../store/raceStore';
 import EnhancedGhostCar from './EnhancedGhostCar';
 import CameraController, { CameraMode } from './CameraController';
+import TireMarks from './TireMarks';
 import Dashboard from './Dashboard';
 import * as THREE from 'three';
 
@@ -142,13 +143,23 @@ export default function TrackView() {
         />
         <pointLight position={[0, 20, 0]} intensity={0.5} />
 
-        {/* Track Surface */}
+        {/* Track Surface with texture pattern */}
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.1, 0]} receiveShadow>
-          <planeGeometry args={[5000, 5000]} />
+          <planeGeometry args={[5000, 5000, 50, 50]} />
           <meshStandardMaterial
-            color="#2a2a2a"
-            roughness={0.8}
-            metalness={0.1}
+            color="#1a1a1a"
+            roughness={0.9}
+            metalness={0.05}
+          />
+        </mesh>
+        
+        {/* Track center line */}
+        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.09, 0]}>
+          <planeGeometry args={[5000, 0.2]} />
+          <meshStandardMaterial
+            color="#ffff00"
+            emissive="#ffff00"
+            emissiveIntensity={0.3}
           />
         </mesh>
 
@@ -170,6 +181,9 @@ export default function TrackView() {
 
         {/* Track Line with speed-based coloring */}
         <TrackLine />
+        
+        {/* Tire Marks */}
+        <TireMarks />
         
         {/* Enhanced Ghost Car */}
         <EnhancedGhostCar />

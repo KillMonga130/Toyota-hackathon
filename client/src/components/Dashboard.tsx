@@ -306,12 +306,36 @@ export default function Dashboard() {
               </button>
             </div>
 
+            {/* Rewind Button */}
+            <button
+              onClick={() => {
+                const newIndex = Math.max(0, currentFrameIndex - Math.floor(totalFrames * 0.1));
+                setCurrentFrameIndex(newIndex);
+              }}
+              className="px-4 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg font-semibold text-white transition-colors uppercase tracking-wider text-sm"
+              title="Rewind 10%"
+            >
+              ⏪
+            </button>
+
             {/* Play/Pause Button */}
             <button
               onClick={() => setIsPlaying(!isPlaying)}
               className="px-6 py-3 bg-primary hover:bg-primary-dark rounded-lg font-semibold text-white transition-colors uppercase tracking-wider text-sm"
             >
               {isPlaying ? '⏸ Pause' : '▶ Play'}
+            </button>
+
+            {/* Fast Forward Button */}
+            <button
+              onClick={() => {
+                const newIndex = Math.min(totalFrames - 1, currentFrameIndex + Math.floor(totalFrames * 0.1));
+                setCurrentFrameIndex(newIndex);
+              }}
+              className="px-4 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg font-semibold text-white transition-colors uppercase tracking-wider text-sm"
+              title="Fast Forward 10%"
+            >
+              ⏩
             </button>
 
             {/* Seek Bar */}
