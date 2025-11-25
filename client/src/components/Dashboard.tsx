@@ -6,6 +6,7 @@ import {
   type FeedbackEvent,
   type ReportCardSummary,
 } from '../hooks/useRaceCoach';
+import { generateDemoData } from '../utils/demoData';
 
 /**
  * Telemetry Dashboard - Racing telemetry overlay
@@ -21,6 +22,7 @@ export default function Dashboard() {
     setCurrentFrameIndex,
     visualizationMode,
     setVisualizationMode,
+    setTelemetryData,
   } = useRaceStore();
   
   const { loadTelemetry, isLoading, error } = useTelemetryLoader();
@@ -125,13 +127,25 @@ export default function Dashboard() {
                 onChange={handleFileInputChange}
                 className="hidden"
               />
-              <button
-                onClick={() => fileInputRef.current?.click()}
-                disabled={isLoading}
-                className="px-6 py-3 bg-primary hover:bg-primary-dark rounded-lg font-semibold text-white transition-colors uppercase tracking-wider text-sm disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isLoading ? 'Loading...' : 'Browse Files'}
-              </button>
+              <div className="flex gap-4">
+                <button
+                  onClick={() => fileInputRef.current?.click()}
+                  disabled={isLoading}
+                  className="px-6 py-3 bg-primary hover:bg-primary-dark rounded-lg font-semibold text-white transition-colors uppercase tracking-wider text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isLoading ? 'Loading...' : 'Browse Files'}
+                </button>
+                <button
+                  onClick={() => {
+                    const demoData = generateDemoData();
+                    setTelemetryData(demoData);
+                  }}
+                  disabled={isLoading}
+                  className="px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg font-semibold text-white transition-colors uppercase tracking-wider text-sm disabled:opacity-50 disabled:cursor-not-allowed border border-gray-600"
+                >
+                  🎮 Try Demo
+                </button>
+              </div>
             </div>
           </div>
 
