@@ -40,52 +40,114 @@ function calculateAngle(p1: THREE.Vector3, p2: THREE.Vector3, p3: THREE.Vector3)
 }
 
 /**
- * Procedural Road Surface - Extruded geometry along the track path
+ * Procedural Road Surface - Custom ribbon geometry that lies flat on the ground
+ * Uses ribbon algorithm: creates left/right vertices for each point
  */
 function ProceduralRoad() {
-  const { telemetryData, visualizationMode } = useRaceStore();
+  const { telemetryData } = useRaceStore();
 
   const roadGeometry = useMemo(() => {
-    if (!telemetryData || telemetryData.length === 0) {
+    if (!telemetryData || telemetryData.length < 2) {
       return null;
     }
 
-    // Use EXACT same points as TrackLine - follow the telemetry path precisely
-    const points: THREE.Vector3[] = telemetryData.map((point) => 
-      new THREE.Vector3(point.x, 0.1, point.z)
+    const roadWidth = 10; // 10 meters wide
+    const roadHeight = 0.1; // Slightly above ground
+    const worldUp = new THREE.Vector3(0, 1, 0);
+
+    // Create vertices array
+    const vertices: number[] = [];
+    const indices: number[] = [];
+    const normals: number[] = [];
+
+    // Check if track is closed (loop)
+    const firstPoint = new THREE.Vector3(telemetryData[0].x, roadHeight, telemetryData[0].z);
+    const lastPoint = new THREE.Vector3(
+      telemetryData[telemetryData.length - 1].x,
+      roadHeight,
+      telemetryData[telemetryData.length - 1].z
     );
+    const isClosed = firstPoint.distanceTo(lastPoint) < 100 && telemetryData.length > 10;
 
-    if (points.length < 2) return null;
+    // Process each point to create left and right vertices
+    for (let i = 0; i < telemetryData.length; i++) {
+      const currentPoint = new THREE.Vector3(
+        telemetryData[i].x,
+        roadHeight,
+        telemetryData[i].z
+      );
 
-    // Create Catmull-Rom curve that follows the exact telemetry path
-    // Use closed loop if track appears to loop, otherwise open curve
-    const isClosed = points.length > 10 && 
-      points[0].distanceTo(points[points.length - 1]) < 100; // Within 100m = closed loop
-    
-    const curve = new THREE.CatmullRomCurve3(points, isClosed);
-    
-    // Get more points along the curve for smoother road surface
-    const curvePoints = curve.getPoints(points.length * 3);
+      // Calculate forward vector (direction to next point)
+      let forward: THREE.Vector3;
+      if (i < telemetryData.length - 1) {
+        const nextPoint = new THREE.Vector3(
+          telemetryData[i + 1].x,
+          roadHeight,
+          telemetryData[i + 1].z
+        );
+        forward = new THREE.Vector3().subVectors(nextPoint, currentPoint).normalize();
+      } else if (isClosed) {
+        // For last point in closed loop, use direction to first point
+        forward = new THREE.Vector3().subVectors(firstPoint, currentPoint).normalize();
+      } else {
+        // For last point in open track, use previous forward vector
+        const prevPoint = new THREE.Vector3(
+          telemetryData[i - 1].x,
+          roadHeight,
+          telemetryData[i - 1].z
+        );
+        forward = new THREE.Vector3().subVectors(currentPoint, prevPoint).normalize();
+      }
 
-    // Create road cross-section shape (10 meters wide, flat)
-    const roadWidth = 10;
-    const roadShape = new THREE.Shape();
-    roadShape.moveTo(-roadWidth / 2, 0);
-    roadShape.lineTo(roadWidth / 2, 0);
-    roadShape.lineTo(roadWidth / 2, -0.1);
-    roadShape.lineTo(-roadWidth / 2, -0.1);
-    roadShape.lineTo(-roadWidth / 2, 0);
+      // Calculate right vector (perpendicular to forward, on XZ plane)
+      const right = new THREE.Vector3().crossVectors(forward, worldUp).normalize();
 
-    // Extrude the shape along the curve
-    const extrudeSettings = {
-      steps: curvePoints.length,
-      bevelEnabled: false,
-      extrudePath: curve,
-    };
+      // Create left and right vertices
+      const leftVertex = new THREE.Vector3()
+        .copy(currentPoint)
+        .addScaledVector(right, roadWidth / 2);
+      const rightVertex = new THREE.Vector3()
+        .copy(currentPoint)
+        .addScaledVector(right, -roadWidth / 2);
 
-    const geometry = new THREE.ExtrudeGeometry(roadShape, extrudeSettings);
-    geometry.rotateX(-Math.PI / 2); // Rotate to lay flat
-    geometry.translate(0, 0.1, 0); // Slight elevation
+      // Add vertices (left vertex, then right vertex)
+      vertices.push(leftVertex.x, leftVertex.y, leftVertex.z);
+      vertices.push(rightVertex.x, rightVertex.y, rightVertex.z);
+
+      // Add normals (pointing up)
+      normals.push(0, 1, 0);
+      normals.push(0, 1, 0);
+    }
+
+    // Create triangles (quads) connecting segments
+    for (let i = 0; i < telemetryData.length - 1; i++) {
+      const baseIndex = i * 2; // Each point has 2 vertices (left, right)
+
+      // First triangle: left(i) -> right(i) -> left(i+1)
+      indices.push(baseIndex, baseIndex + 1, baseIndex + 2);
+
+      // Second triangle: right(i) -> right(i+1) -> left(i+1)
+      indices.push(baseIndex + 1, baseIndex + 3, baseIndex + 2);
+    }
+
+    // Close the loop if it's a closed track
+    if (isClosed) {
+      const lastBaseIndex = (telemetryData.length - 1) * 2;
+      const firstBaseIndex = 0;
+
+      // First triangle: left(last) -> right(last) -> left(first)
+      indices.push(lastBaseIndex, lastBaseIndex + 1, firstBaseIndex);
+
+      // Second triangle: right(last) -> right(first) -> left(first)
+      indices.push(lastBaseIndex + 1, firstBaseIndex + 1, firstBaseIndex);
+    }
+
+    // Create BufferGeometry
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+    geometry.setAttribute('normal', new THREE.Float32BufferAttribute(normals, 3));
+    geometry.setIndex(indices);
+    geometry.computeVertexNormals();
 
     return geometry;
   }, [telemetryData]);
@@ -107,80 +169,127 @@ function ProceduralRoad() {
 
 /**
  * Procedural Curbs - Rumble strips at high curvature points
+ * Uses same ribbon algorithm as road, but wider
  */
 function ProceduralCurbs() {
   const { telemetryData } = useRaceStore();
 
-  const curbMeshes = useMemo(() => {
+  const curbGeometry = useMemo(() => {
     if (!telemetryData || telemetryData.length < 3) {
-      return [];
+      return null;
     }
 
-    const curbs: React.ReactElement[] = [];
-    const points = telemetryData.map((point) => 
-      new THREE.Vector3(point.x, 0.15, point.z)
-    );
-
+    const curbWidth = 12; // Slightly wider than road (10m)
+    const curbHeight = 0.15; // Slightly above road
+    const worldUp = new THREE.Vector3(0, 1, 0);
     const angleThreshold = 0.3; // Radians (~17 degrees) - sharp turn threshold
-    const curbWidth = 12; // Slightly wider than road
-    const curbHeight = 0.1;
 
-    // Check each segment for high curvature
-    for (let i = 1; i < points.length - 1; i++) {
-      const angle = calculateAngle(points[i - 1], points[i], points[i + 1]);
+    // Find sharp turn segments
+    const sharpTurnIndices: number[] = [];
+    for (let i = 1; i < telemetryData.length - 1; i++) {
+      const p1 = new THREE.Vector3(telemetryData[i - 1].x, curbHeight, telemetryData[i - 1].z);
+      const p2 = new THREE.Vector3(telemetryData[i].x, curbHeight, telemetryData[i].z);
+      const p3 = new THREE.Vector3(telemetryData[i + 1].x, curbHeight, telemetryData[i + 1].z);
       
-      if (angle < Math.PI - angleThreshold) { // Sharp turn detected
-        const p1 = points[i - 1];
-        const p2 = points[i];
-        const p3 = points[i + 1];
-        
-        // Create curb segment
-        const direction = new THREE.Vector3().subVectors(p3, p1).normalize();
-        const perpendicular = new THREE.Vector3(-direction.z, 0, direction.x);
-        
-        // Create curb geometry (striped red and white)
-        const curbShape = new THREE.Shape();
-        curbShape.moveTo(-curbWidth / 2, 0);
-        curbShape.lineTo(curbWidth / 2, 0);
-        curbShape.lineTo(curbWidth / 2, curbHeight);
-        curbShape.lineTo(-curbWidth / 2, curbHeight);
-        curbShape.lineTo(-curbWidth / 2, 0);
-
-        const curve = new THREE.CatmullRomCurve3([p1, p2, p3]);
-        const extrudeSettings = {
-          steps: 10,
-          bevelEnabled: false,
-          extrudePath: curve,
-        };
-
-        const geometry = new THREE.ExtrudeGeometry(curbShape, extrudeSettings);
-        geometry.rotateX(-Math.PI / 2);
-        geometry.translate(0, 0.15, 0);
-
-        // Create striped material (red and white)
-        const stripeCount = 5;
-        const stripeWidth = curbWidth / stripeCount;
-        
-        curbs.push(
-          <mesh key={`curb-${i}`} geometry={geometry} position={[0, 0, 0]}>
-            <meshStandardMaterial
-              color="#ff0000"
-              roughness={0.8}
-              metalness={0.1}
-            />
-          </mesh>
-        );
+      const angle = calculateAngle(p1, p2, p3);
+      if (angle < Math.PI - angleThreshold) {
+        sharpTurnIndices.push(i);
       }
     }
 
-    return curbs;
+    if (sharpTurnIndices.length === 0) {
+      return null;
+    }
+
+    // Create vertices and indices for all curb segments
+    const vertices: number[] = [];
+    const indices: number[] = [];
+    const normals: number[] = [];
+    let vertexOffset = 0;
+
+    // Process each sharp turn segment
+    sharpTurnIndices.forEach((turnIndex) => {
+      const segmentStart = Math.max(0, turnIndex - 5); // Include a few points before/after
+      const segmentEnd = Math.min(telemetryData.length - 1, turnIndex + 5);
+
+      for (let i = segmentStart; i <= segmentEnd; i++) {
+        const currentPoint = new THREE.Vector3(
+          telemetryData[i].x,
+          curbHeight,
+          telemetryData[i].z
+        );
+
+        // Calculate forward vector
+        let forward: THREE.Vector3;
+        if (i < telemetryData.length - 1) {
+          const nextPoint = new THREE.Vector3(
+            telemetryData[i + 1].x,
+            curbHeight,
+            telemetryData[i + 1].z
+          );
+          forward = new THREE.Vector3().subVectors(nextPoint, currentPoint).normalize();
+        } else {
+          const prevPoint = new THREE.Vector3(
+            telemetryData[i - 1].x,
+            curbHeight,
+            telemetryData[i - 1].z
+          );
+          forward = new THREE.Vector3().subVectors(currentPoint, prevPoint).normalize();
+        }
+
+        // Calculate right vector
+        const right = new THREE.Vector3().crossVectors(forward, worldUp).normalize();
+
+        // Create left and right vertices
+        const leftVertex = new THREE.Vector3()
+          .copy(currentPoint)
+          .addScaledVector(right, curbWidth / 2);
+        const rightVertex = new THREE.Vector3()
+          .copy(currentPoint)
+          .addScaledVector(right, -curbWidth / 2);
+
+        vertices.push(leftVertex.x, leftVertex.y, leftVertex.z);
+        vertices.push(rightVertex.x, rightVertex.y, rightVertex.z);
+        normals.push(0, 1, 0);
+        normals.push(0, 1, 0);
+      }
+
+      // Create triangles for this segment
+      const segmentLength = segmentEnd - segmentStart;
+      for (let i = 0; i < segmentLength; i++) {
+        const baseIndex = vertexOffset + i * 2;
+
+        // First triangle
+        indices.push(baseIndex, baseIndex + 1, baseIndex + 2);
+        // Second triangle
+        indices.push(baseIndex + 1, baseIndex + 3, baseIndex + 2);
+      }
+
+      vertexOffset += (segmentLength + 1) * 2;
+    });
+
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+    geometry.setAttribute('normal', new THREE.Float32BufferAttribute(normals, 3));
+    geometry.setIndex(indices);
+    geometry.computeVertexNormals();
+
+    return geometry;
   }, [telemetryData]);
 
-  if (curbMeshes.length === 0) {
+  if (!curbGeometry) {
     return null;
   }
 
-  return <>{curbMeshes}</>;
+  return (
+    <mesh geometry={curbGeometry}>
+      <meshStandardMaterial
+        color="#ff0000"
+        roughness={0.8}
+        metalness={0.1}
+      />
+    </mesh>
+  );
 }
 
 /**
