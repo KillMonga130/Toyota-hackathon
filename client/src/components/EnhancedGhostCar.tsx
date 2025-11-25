@@ -58,19 +58,22 @@ export default function EnhancedGhostCar() {
 
     // Wheel spin animation based on speed
     const speed = currentFrame.speed || 0;
-    const wheelRotationSpeed = (speed / 100) * delta * 10; // Rotate based on speed
+    // Calculate distance traveled this frame (speed in km/h, convert to m/s, then to rotation)
+    const distancePerFrame = (speed / 3.6) * delta; // m/s * delta = meters
+    const wheelCircumference = 2 * Math.PI * 0.35; // wheel radius = 0.35m
+    const wheelRotationSpeed = (distancePerFrame / wheelCircumference) * (2 * Math.PI); // radians
     
     if (frontLeftWheelRef.current) {
-      frontLeftWheelRef.current.rotation.x += wheelRotationSpeed;
+      frontLeftWheelRef.current.rotation.x -= wheelRotationSpeed; // Negative for forward rotation
     }
     if (frontRightWheelRef.current) {
-      frontRightWheelRef.current.rotation.x += wheelRotationSpeed;
+      frontRightWheelRef.current.rotation.x -= wheelRotationSpeed;
     }
     if (rearLeftWheelRef.current) {
-      rearLeftWheelRef.current.rotation.x += wheelRotationSpeed;
+      rearLeftWheelRef.current.rotation.x -= wheelRotationSpeed;
     }
     if (rearRightWheelRef.current) {
-      rearRightWheelRef.current.rotation.x += wheelRotationSpeed;
+      rearRightWheelRef.current.rotation.x -= wheelRotationSpeed;
     }
 
     // Dynamic brake lights - glow when braking
@@ -163,50 +166,58 @@ export default function EnhancedGhostCar() {
         <meshStandardMaterial color={carColor} metalness={0.6} roughness={0.2} />
       </mesh>
 
-      {/* Front Left Wheel */}
-      <group ref={frontLeftWheelRef} position={[1.1, 0.2, 1.3]}>
+      {/* Front Left Wheel - positioned at front left corner */}
+      <group ref={frontLeftWheelRef} position={[0.9, 0.25, 1.5]} rotation={[0, 0, Math.PI / 2]}>
+        {/* Tire (outer black ring) */}
         <mesh>
-          <cylinderGeometry args={[0.35, 0.35, 0.25, 16]} />
+          <cylinderGeometry args={[0.35, 0.35, 0.25, 32]} />
           <meshStandardMaterial color="#0a0a0a" roughness={0.9} />
         </mesh>
+        {/* Rim (inner metallic) */}
         <mesh>
-          <cylinderGeometry args={[0.3, 0.3, 0.2, 16]} />
+          <cylinderGeometry args={[0.28, 0.28, 0.26, 16]} />
           <meshStandardMaterial color={wheelColor} metalness={0.9} roughness={0.1} />
         </mesh>
       </group>
 
-      {/* Front Right Wheel */}
-      <group ref={frontRightWheelRef} position={[-1.1, 0.2, 1.3]}>
+      {/* Front Right Wheel - positioned at front right corner */}
+      <group ref={frontRightWheelRef} position={[-0.9, 0.25, 1.5]} rotation={[0, 0, Math.PI / 2]}>
+        {/* Tire (outer black ring) */}
         <mesh>
-          <cylinderGeometry args={[0.35, 0.35, 0.25, 16]} />
+          <cylinderGeometry args={[0.35, 0.35, 0.25, 32]} />
           <meshStandardMaterial color="#0a0a0a" roughness={0.9} />
         </mesh>
+        {/* Rim (inner metallic) */}
         <mesh>
-          <cylinderGeometry args={[0.3, 0.3, 0.2, 16]} />
+          <cylinderGeometry args={[0.28, 0.28, 0.26, 16]} />
           <meshStandardMaterial color={wheelColor} metalness={0.9} roughness={0.1} />
         </mesh>
       </group>
 
-      {/* Rear Left Wheel */}
-      <group ref={rearLeftWheelRef} position={[1.1, 0.2, -1.3]}>
+      {/* Rear Left Wheel - positioned at rear left corner */}
+      <group ref={rearLeftWheelRef} position={[0.9, 0.25, -1.5]} rotation={[0, 0, Math.PI / 2]}>
+        {/* Tire (outer black ring) */}
         <mesh>
-          <cylinderGeometry args={[0.35, 0.35, 0.25, 16]} />
+          <cylinderGeometry args={[0.35, 0.35, 0.25, 32]} />
           <meshStandardMaterial color="#0a0a0a" roughness={0.9} />
         </mesh>
+        {/* Rim (inner metallic) */}
         <mesh>
-          <cylinderGeometry args={[0.3, 0.3, 0.2, 16]} />
+          <cylinderGeometry args={[0.28, 0.28, 0.26, 16]} />
           <meshStandardMaterial color={wheelColor} metalness={0.9} roughness={0.1} />
         </mesh>
       </group>
 
-      {/* Rear Right Wheel */}
-      <group ref={rearRightWheelRef} position={[-1.1, 0.2, -1.3]}>
+      {/* Rear Right Wheel - positioned at rear right corner */}
+      <group ref={rearRightWheelRef} position={[-0.9, 0.25, -1.5]} rotation={[0, 0, Math.PI / 2]}>
+        {/* Tire (outer black ring) */}
         <mesh>
-          <cylinderGeometry args={[0.35, 0.35, 0.25, 16]} />
+          <cylinderGeometry args={[0.35, 0.35, 0.25, 32]} />
           <meshStandardMaterial color="#0a0a0a" roughness={0.9} />
         </mesh>
+        {/* Rim (inner metallic) */}
         <mesh>
-          <cylinderGeometry args={[0.3, 0.3, 0.2, 16]} />
+          <cylinderGeometry args={[0.28, 0.28, 0.26, 16]} />
           <meshStandardMaterial color={wheelColor} metalness={0.9} roughness={0.1} />
         </mesh>
       </group>
